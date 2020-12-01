@@ -1,2 +1,10 @@
 App works!
+<p *ngIf="displayLogout()"><a routerLink="course-list">Mostra corsi.</a></p>
 <router-outlet></router-outlet>
+<p><button (click)="loginUser($event)">Login user</button>&nbsp;
+    <button (click)="loginAdmin($event)">Login admin</button>&nbsp;
+    <button (click)="onLogout($event)" *ngIf="displayLogout()">Logout</button></p>
+<p>{{ message }}</p>
+<!-- last, first, even, odd sono boolean; index è number -->
+<p *ngIf="displayLogout()">Roles:<span *ngFor="let role of roles(); last as isLast">
+        {{ role }}<span *ngIf="!isLast">, </span></span>.</p>

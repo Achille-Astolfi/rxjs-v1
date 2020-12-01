@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { CourseListComponent } from './course-list/course-list.module';
+import { LoggedGuard } from './guard/logged.guard';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'course-list', component: CourseListComponent, canActivate: [LoggedGuard] },
+  //
+//  { path: "", pathMatch: "full", redirectTo: "/home"}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
